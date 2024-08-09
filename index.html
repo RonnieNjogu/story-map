@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Story Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+
+        .story-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            color: #333;
+            z-index: 1000;
+        }
+
+        .story-panel h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .story-panel p {
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .leaflet-container {
+            background: #f0f4f7;
+        }
+
+        .leaflet-popup-content-wrapper {
+            background: #2c3e50;
+            color: #ecf0f1;
+            border-radius: 8px;
+        }
+
+        .leaflet-popup-content h3 {
+            margin-top: 0;
+            color: #ecdbba;
+        }
+
+        .leaflet-popup-content p {
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        .leaflet-popup-tip-container {
+            display: none;
+        }
+
+        .leaflet-popup-content-wrapper a {
+            color: #3498db;
+        }
+
+        .custom-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #e74c3c;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            border: 2px solid #c0392b;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+<div class="story-panel" id="story">
+    <h3>Welcome to the Journey!</h3>
+    <p>Click on the markers to explore the landmarks.</p>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="storymap.js"></script>
+
+</body>
+</html>
